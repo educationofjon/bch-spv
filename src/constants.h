@@ -12,7 +12,7 @@
 
 #define BCH_MAX_MESSAGE (32 * 1000 * 1000)
 #define BCH_USER_AGENT "/bch:0.0.1/"
-#define BCH_PROTO_VERSION 1
+#define BCH_PROTO_VERSION 70015
 #define BCH_SERVICES 0
 
 
