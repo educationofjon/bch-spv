@@ -43,6 +43,7 @@ static const uint8_t BCH_CHAINWORK[32] = {
 
 #define BCH_TARGET_SPACING (10 * 60)
 #define BCH_TARGET_TIMESPAN (14 * 24 * 60 * 60)
+#define BCH_RETARGET_INTERVAL 2016
 #define BCH_TARGET_RESET false
 #define BCH_NO_RETARGETTING false
 #define BCH_GENESIS BCH_GENESIS_MAIN
@@ -50,6 +51,42 @@ static const uint8_t BCH_CHAINWORK[32] = {
 #define BCH_USE_CHECKPOINTS false
 #define BCH_LAST_CHECKPOINT 530359
 #define BCH_MAX_TIP_AGE (24 * 60 * 60)
+#define BCH_LAUNCH_DATE 1231006505
+
+#elif BCH_NETWORK == BCH_TESTNET
+
+/*
+ * Testnet
+ */
+
+#define BCH_NETWORK_NAME "testnet"
+#define BCH_MAGIC 0xf4f3e5f4
+#define BCH_PORT 18333
+#define BCH_BITS 0x1d00ffff
+
+#define BCH_TARGET_SPACING (10 * 60)
+#define BCH_TARGET_TIMESPAN (14 * 24 * 60 * 60)
+#define BCH_RETARGET_INTERVAL 2016
+#define BCH_TARGET_RESET true
+#define BCH_NO_RETARGETTING false
+#define BCH_GENESIS BCH_GENESIS_TESTNET
+
+#define BCH_USE_CHECKPOINTS false
+#define BCH_MAX_TIP_AGE (24 * 60 * 60)
+#define BCH_LAUNCH_DATE 1296688602
+
+#elif BCH_NETWORK == BCH_REGTEST
+
+/*
+ * Regtest
+ */
+
+#define BCH_NETWORK_NAME "regtest"
+#define BCH_MAGIC 0xfabfb5da
+#define BCH_PORT 48444
+#define BCH_BITS 0x207fffff
+
+
 
 #else
 
@@ -58,5 +95,7 @@ static const uint8_t BCH_CHAINWORK[32] = {
  */
 
 #error "Invalid network."
+
+#endif
 
 #endif
